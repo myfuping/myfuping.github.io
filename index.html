@@ -2,25 +2,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>PopCash Click Trigger</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
+    button {
+      font-size: 20px;
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #45a049; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 100px;">
-    <h1>🎉 Welcome to My Page</h1>
-    <p>This site is now monetized with PopCash Ads. Please keep it open to generate revenue.</p>
+<body>
+  <h1>🎁 任务领取中心</h1>
+  <p>点击下方按钮以开始任务（同时触发广告）</p>
+  <button onclick="launchAd()">开始任务</button>
 
-    <script type="text/javascript">
-       var uid = '490752';
-       var wid = '740797';
-       var pop_tag = document.createElement('script');
-       pop_tag.src = '//cdn.popcash.net/show.js';
-       document.body.appendChild(pop_tag);
-       pop_tag.onerror = function() {
-           pop_tag = document.createElement('script');
-           pop_tag.src = '//cdn2.popcash.net/show.js';
-           document.body.appendChild(pop_tag);
-       };
-    </script>
+  <script type="text/javascript">
+    function launchAd() {
+      var uid = '490752';
+      var wid = '740797';
+      var pop_tag = document.createElement('script');
+      pop_tag.src = '//cdn.popcash.net/show.js';
+      document.body.appendChild(pop_tag);
+      pop_tag.onerror = function() {
+        pop_tag = document.createElement('script');
+        pop_tag.src = '//cdn2.popcash.net/show.js';
+        document.body.appendChild(pop_tag);
+      };
+      alert("任务已启动，请等待页面弹出或新标签页打开广告！");
+    }
+  </script>
 </body>
 </html>
