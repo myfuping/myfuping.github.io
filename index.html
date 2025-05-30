@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PopCash A-Tag Trigger</title>
+  <title>PopCash Final Trigger</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
@@ -20,15 +20,27 @@
   </style>
 </head>
 <body>
-  <h1>🎯 广告触发测试（A标签模拟点击）</h1>
-  <p>点击按钮将模拟真实点击，尝试弹出广告页面。</p>
-  <button onclick="trigger()">开始任务</button>
-  <a href="https://cdn.popcash.net/show.js" target="_blank" id="realClick" style="display:none;">GO</a>
+  <h1>🎯 广告触发测试（最终修正版）</h1>
+  <p>点击按钮后将加载 PopCash 广告脚本并尝试弹出窗口。此方法适配多种浏览器。</p>
+  <button onclick="triggerPopCash()">点击开始任务</button>
 
   <script>
-    function trigger() {
-      document.getElementById("realClick").click();
-      alert("✅ 广告弹窗已尝试触发，请检查是否打开新标签页");
+    function triggerPopCash() {
+      var uid = '490752';
+      var wid = '740797';
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '//cdn.popcash.net/show.js';
+      document.body.appendChild(script);
+
+      script.onerror = function() {
+        var fallback = document.createElement('script');
+        fallback.type = 'text/javascript';
+        fallback.src = '//cdn2.popcash.net/show.js';
+        document.body.appendChild(fallback);
+      };
+
+      alert("✅ 广告脚本已加载，若浏览器允许，弹窗即将打开！");
     }
   </script>
 </body>
