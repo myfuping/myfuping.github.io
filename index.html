@@ -3,35 +3,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PopCash Popup Trigger</title>
+  <title>Start Task | PopCash Ads</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
     button {
       font-size: 20px;
       padding: 12px 24px;
-      background-color: #4CAF50;
+      background-color: #28a745;
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
     }
-    button:hover { background-color: #45a049; }
+    button:hover { background-color: #218838; }
   </style>
 </head>
 <body>
-  <h1>🎯 强制弹窗广告测试</h1>
-  <p>点击下方按钮将会<strong>立即弹出一个新窗口</strong>，用于测试广告是否被浏览器允许。</p>
-  <button onclick="launchPopup()">立即弹出</button>
+  <h1>🚀 开始任务以触发 PopCash 广告</h1>
+  <p>点击按钮后将加载广告脚本并弹出窗口，请确保浏览器允许弹窗。</p>
+  <button onclick="triggerPopCash()">立即开始</button>
 
-  <script type="text/javascript">
-    function launchPopup() {
-      const popupWindow = window.open('https://popcash.net/', '_blank');
-      if (!popupWindow) {
-        alert('❌ 浏览器阻止了弹窗，请关闭广告拦截器或改用其他浏览器重试。');
-      } else {
-        alert('✅ 弹窗已尝试打开，请查看是否新标签页已弹出。');
-      }
+  <script>
+    function triggerPopCash() {
+      var uid = '490752';
+      var wid = '740797';
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.src = '//cdn.popcash.net/show.js';
+      document.body.appendChild(s);
+      s.onerror = function() {
+        var fallback = document.createElement('script');
+        fallback.type = 'text/javascript';
+        fallback.src = '//cdn2.popcash.net/show.js';
+        document.body.appendChild(fallback);
+      };
+      alert('✅ 广告请求已发送，请查看是否弹出新标签页。');
     }
   </script>
 </body>
