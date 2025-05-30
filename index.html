@@ -3,45 +3,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PopCash Final Trigger</title>
+  <title>Welcome | Monetag Ads</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
-    button {
-      font-size: 20px;
-      padding: 12px 24px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
     }
-    button:hover { background-color: #0056b3; }
+    h1 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 16px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <h1>🎯 广告触发测试（最终修正版）</h1>
-  <p>点击按钮后将加载 PopCash 广告脚本并尝试弹出窗口。此方法适配多种浏览器。</p>
-  <button onclick="triggerPopCash()">点击开始任务</button>
+  <h1>🎉 欢迎访问！</h1>
+  <p>本页面已集成 Monetag 弹窗广告，建议使用移动设备或海外代理访问测试弹出效果。</p>
 
-  <script>
-    function triggerPopCash() {
-      var uid = '490752';
-      var wid = '740797';
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '//cdn.popcash.net/show.js';
-      document.body.appendChild(script);
-
-      script.onerror = function() {
-        var fallback = document.createElement('script');
-        fallback.type = 'text/javascript';
-        fallback.src = '//cdn2.popcash.net/show.js';
-        document.body.appendChild(fallback);
-      };
-
-      alert("✅ 广告脚本已加载，若浏览器允许，弹窗即将打开！");
-    }
-  </script>
+  <!-- Monetag OnClick Popunder Script -->
+  <script src="https://fpyf8.com/88/tag.min.js" data-zone="149916" async data-cfasync="false"></script>
 </body>
 </html>
